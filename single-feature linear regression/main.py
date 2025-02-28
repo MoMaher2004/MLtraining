@@ -41,10 +41,12 @@ model.fit(xTrain, yTrain)
 
 yPred = model.predict(xTest)
 
-plt.scatter(xTest, yTest)
-plt.scatter(xTest, yPred, color='red')
-plt.scatter(xTrain, yTrain, color='green')
+plt.scatter(xTest, yTest, color='black', label='True points')
+plt.scatter(xTest, yPred, color='red', label='Predicted points')
+plt.plot(xTest, yPred, linewidth=1, color='blue', label='Reg. line')
+plt.scatter(xTrain, yTrain, color='green', label='Training points')
 plt.title('prediction vs real')
+plt.legend()
 plt.show()
 
 # calculate accuracy using R2 score
